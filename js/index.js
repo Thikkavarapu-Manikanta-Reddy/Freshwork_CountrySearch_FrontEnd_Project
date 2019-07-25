@@ -1,4 +1,6 @@
 window.addEventListener('load', () => {
+    var x = document.getElementById("error");
+      x.style.display = "none";
     document.getElementById("search-bar")
         .addEventListener("keyup", (event) =>{
             event.preventDefault();
@@ -6,10 +8,51 @@ window.addEventListener('load', () => {
     });
 });
 function countrysearch(){
-
+    var x = document.getElementById("error");
+      x.style.display = "none";
     let search = document.getElementById("search-bar").value;
-    const baseurl = new Request("https://restcountries.eu/rest/v2/name/" + search);
-
+    let radiobtn = document.querySelector('input[name="countrydetails"]:checked').value;
+    console.log(radiobtn);
+    let baseurl;
+    if(radiobtn == 'name')
+    {
+        baseurl = "https://restcountries.eu/rest/v2/name/" + search;
+        console.log(baseurl);
+    }
+    if(radiobtn == 'code')
+    {
+    baseurl = "https://restcountries.eu/rest/v2/alpha/" + search;
+    console.log(baseurl);
+    }
+    if(radiobtn == 'currency')
+    {
+    baseurl = "https://restcountries.eu/rest/v2/currency/" + search;
+    console.log(baseurl);
+    }
+    if(radiobtn == 'language')
+    {
+    baseurl = "https://restcountries.eu/rest/v2/lang/" + search;
+    }
+    if(radiobtn == 'capitalcity')
+    {
+    baseurl = "https://restcountries.eu/rest/v2/capital/" + search;
+    console.log(baseurl);
+    }
+    if(radiobtn == 'callingcode')
+    {
+    baseurl = "https://restcountries.eu/rest/v2/callingcode/" + search;
+    console.log(baseurl);
+    }
+    if(radiobtn == 'region')
+    {
+    baseurl = "https://restcountries.eu/rest/v2/region/" + search;
+    console.log(baseurl);
+    }
+    if(radiobtn == 'regionbloc')
+    {
+    baseurl = "https://restcountries.eu/rest/v2/regionalbloc/" + search;
+    console.log(baseurl);
+    }
     fetch(baseurl).then((response) => {
         if(response.status === 200)
             return response.json();
@@ -19,7 +62,13 @@ function countrysearch(){
         while(searchdata.firstChild){
             searchdata.removeChild(searchdata.firstChild)
         }
-        alert("No Country Found!!");
+        // alert("No Country Found!!");
+        var x = document.getElementById("error");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+        } else {
+          x.style.display = "none";
+        }
         throw new Error("Data not found!!");
        }
     }).then(response => {
