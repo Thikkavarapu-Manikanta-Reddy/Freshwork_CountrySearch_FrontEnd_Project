@@ -1,12 +1,19 @@
 window.addEventListener('load', () => {
     var x = document.getElementById("error");
       x.style.display = "none";
+      var x = document.getElementById("loader");
+      x.style.display = "none";
     document.getElementById("search-bar")
         .addEventListener("keyup", (event) =>{
             event.preventDefault();
             countrysearch();
     });
 });
+function loader()
+{
+    var x = document.getElementById("loader");
+    x.style.display = "block";
+}
 function countrysearch(){
     var x = document.getElementById("error");
       x.style.display = "none";
@@ -18,40 +25,49 @@ function countrysearch(){
     {
         baseurl = "https://restcountries.eu/rest/v2/name/" + search;
         console.log(baseurl);
+        loader();
     }
     if(radiobtn == 'code')
     {
     baseurl = "https://restcountries.eu/rest/v2/alpha/" + search;
     console.log(baseurl);
+    loader();
     }
     if(radiobtn == 'currency')
     {
     baseurl = "https://restcountries.eu/rest/v2/currency/" + search;
     console.log(baseurl);
+    loader();
     }
     if(radiobtn == 'language')
     {
     baseurl = "https://restcountries.eu/rest/v2/lang/" + search;
+    console.log(baseurl);
+    loader();
     }
     if(radiobtn == 'capitalcity')
     {
     baseurl = "https://restcountries.eu/rest/v2/capital/" + search;
     console.log(baseurl);
+    loader();
     }
     if(radiobtn == 'callingcode')
     {
     baseurl = "https://restcountries.eu/rest/v2/callingcode/" + search;
     console.log(baseurl);
+    loader();
     }
     if(radiobtn == 'region')
     {
     baseurl = "https://restcountries.eu/rest/v2/region/" + search;
     console.log(baseurl);
+    loader();
     }
     if(radiobtn == 'regionbloc')
     {
     baseurl = "https://restcountries.eu/rest/v2/regionalbloc/" + search;
     console.log(baseurl);
+    loader();
     }
     fetch(baseurl).then((response) => {
         if(response.status === 200)
@@ -68,6 +84,12 @@ function countrysearch(){
           x.style.display = "block";
         } else {
           x.style.display = "none";
+        }
+        var y = document.getElementById("loader");
+        if (y.style.display === "none") {
+          y.style.display = "block";
+        } else {
+          y.style.display = "none";
         }
         throw new Error("Data not found!!");
        }
@@ -99,7 +121,8 @@ function countrysearch(){
 
         searchdata.appendChild(cardlink);
     }
-    
+    var x = document.getElementById("error");
+    x.style.display = "none";
     }).catch(error => {
         //Todo Report Error to user
         console.error(error);
