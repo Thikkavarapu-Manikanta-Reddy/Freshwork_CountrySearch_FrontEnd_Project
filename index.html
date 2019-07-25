@@ -9,10 +9,18 @@
 </head>
 <body>
     <div class = "container">
-            <br><br>
-        <div class = "search">
+            <br>
+            <h3 style="margin-left:41%;"><span style="color:#3CB371;">Country</span> Explorer</h3><hr>
+            <h4 style="margin-left:41%;">Select Search Options:</h4>
+        <span style="margin-left:41%;">
+        Name<input type="radio" name="gender" value="male" checked>
+        Name<input type="radio" name="gender" value="male">
+        </span><br><br>
+            <div class = "search">
             <input id="search-bar" class = "search-bar" placeholder="Search By CountryName" type = "text"/>
-        </div><br><br>
+            <button class="button button1" class = "search-button" onclick="countrysearch()">Search</button>
+        </div><br>
+        <h3 style="margin-left:41%;"><span style="color:#3CB371;">Country</span> Results</h3>
         <div id = "search-results" class = "search-results">
         </div>
     </div>

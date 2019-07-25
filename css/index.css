@@ -3,6 +3,10 @@
     display:flex;
     flex-wrap: wrap;
 }
+hr
+{
+width:80%;
+}
 .a
 {
     max-width: 30%;
@@ -19,10 +23,43 @@
     width:30%;
     height:30%;
 }
-input
+input#search-bar
 {
 margin-left:40%;
 border-radius:2px;
 padding:13px;
 border:darkgray;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+  .button {
+    background-color: white; /* Green */
+    border: none;
+    color: black;
+    padding: 1%;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 50%;
+    cursor: pointer;
+    border-radius: 2px;
+    width:5%;
+}
+.button1 {
+    color:black;
+    background-color: white; 
+    border: 2px solid #A4A4A4;
 }
