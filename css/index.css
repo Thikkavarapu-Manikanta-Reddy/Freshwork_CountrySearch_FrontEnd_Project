@@ -1,0 +1,25 @@
+.search-results
+{
+    display:flex;
+    flex-wrap: wrap;
+}
+.a
+{
+    max-width: 30%;
+    width:30%;
+    border-radius: 3px;
+    padding: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+.flagimage
+{
+    display:block;
+    margin:auto;
+    width:30%;
+    height:30%;
+}
+input
+{
+margin-left:40%;
+}
