@@ -23,6 +23,13 @@ width:80%;
     width:30%;
     height:30%;
 }
+.flagimage2
+{
+    display:block;
+    margin:auto;
+    width:10%;
+    height:10%;
+}
 input#search-bar
 {
 margin-left:40%;

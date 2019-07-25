@@ -13,7 +13,14 @@ function getParameterByName(name, url) {
 function countrydetails(){
 console.log(JSON.parse(getParameterByName('countryname')));
 var countrydetails = JSON.parse(getParameterByName('countryname'));
-const countrydata = document.getElementById("country-details")
+const countrydata = document.getElementById("country-details");
+let flagimage2 = document.createElement("img");
+flagimage2.setAttribute("src", countrydetails.flag);
+flagimage2.className = "flagimage2";
+countrydata.appendChild(flagimage2);
+var br = document.createElement('br');
+countrydata.appendChild(br);
+
 var table = document.createElement('table');
 table.innerHTML = "  <tr><th>Name</th><th>Capital</th><th>Region</th><th>SubRegion</th><th>Population</th></tr><tr><td>"
 +countrydetails.name+"</td><td>"
