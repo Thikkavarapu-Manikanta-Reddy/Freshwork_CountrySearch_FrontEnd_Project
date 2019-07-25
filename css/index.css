@@ -191,3 +191,26 @@ table {
             transform: scale(1);
   }
 }
+span#Radio
+{
+  margin-left:16%;
+}
+@media only screen and (max-width: 750px) {
+  span#Radio
+  {
+    font-size:20%;
+    margin-left:0%;
+  }
+  .button {
+    font-size: 50%;
+    width:13%;
+}
+}
+@media only screen and (min-width: 751px) and (max-width: 1100px)
+{
+  span#Radio
+  {
+    font-size:70%;
+    margin-left:0%;
+  }
+}
