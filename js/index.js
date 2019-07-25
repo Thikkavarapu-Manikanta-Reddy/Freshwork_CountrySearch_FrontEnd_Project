@@ -3,8 +3,6 @@ window.addEventListener('load', () => {
         .addEventListener("keyup", (event) =>{
             event.preventDefault();
             countrysearch();
-            if(event.keyCode === 13)
-            countrysearch();   
     });
 });
 function countrysearch(){
@@ -47,7 +45,7 @@ function countrysearch(){
         
         let cardlink = document.createElement("a");
         cardlink.className = "a";
-        cardlink.setAttribute("href", "countrydetails.html?countryname="+response[i]["name"]);
+        cardlink.setAttribute("href", "countrydetails.html?countryname="+JSON.stringify(response[i]));
         cardlink.appendChild(card);
 
         searchdata.appendChild(cardlink);
